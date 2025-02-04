@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Hamburger Responsivo</title>
+  <link rel="stylesheet" href="/dist/style/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__menu" id="menu">
+        <div class="header__menu__menu-bar" id="menu-bar" onclick="menuOnClick()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </div>
+        <nav class="header__nav" id="nav">
+          <ul>
+            <li data-section="hero"><a href="#hero">Inicio</a></li>
+            <li data-section="sobre"><a href="#sobre">Sobre</a></li>
+            <li data-section="livros"><a href="#livros">Livros</a></li>
+            <li data-section="trailers"><a href="#trailers">Filmes</a></li>
+          </ul>
+        </nav> 
+      </div>
+    <div class="menu-bg" id="menu-bg"></div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero__container">
+      <div class="hero__container__content">
+        <div>
+            <h1>Duna</h1>
+            <div class="hero__container__content__description">
+              Envolvido numa intrincada teia política e religiosa, Paul divide-se entre as obrigações de herdeiro e seu treinamento nas doutrinas secretas de uma antiga irmandade, que vê nele a esperança de realização de um plano urdido há séculos. Ecos de profecias ancestrais também o cercam entre os nativos de Arrakis.
+            </div>
+            <div class="hero__container__content__buttons">
+                <button>Filmes</button>
+                <button>Livros</button>
+            </div>
+        </div>
+        <div class="hero__container__content__image">
+          <img src="/dist/images/hero/dune_autor.jpg" alt="Duna">
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="sobre__container">
+      <h2>Sobre Duna</h2>
+      <div class="sobre__container__content">
+        <p>Duna é um universo ficcional criado por <strong>Frank Herbert</strong> para a série de seis livros iniciada em <em>Duna</em>. Posteriormente o universo viria a ser alargado nos livros de <strong>Kevin J. Anderson</strong> e <strong>Brian Herbert</strong> assim como em obras noutras plataformas, tais como jogos de RPG e de tabuleiro.</p>
+      </div>
+      <div class="sobre__container__authors">
+        <div class="sobre__container__authors__author">
+            <img src="/dist/images/sobre/Frank_Herbert.jpg" alt="Frank Herbert">
+            <button>Frank Herbert</button>
+        </div>
+        <div class="sobre__container__authors__author">
+            <img src="/dist/images/sobre/KevinJ.Anderson.jpg" alt="Kevin J. Anderson">
+            <button>Kevin J. Anderson</button>
+        </div>
+        <div class="sobre__container__authors__author">
+            <img src="/dist/images/sobre/Brian.jpg" alt="Brian Herbert">
+            <button>Brian Herbert</button>
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="livros" id="livros">
+    <div class="livros__container">
+        <div class="livros__container__card">
+            <img src="/dist/images/livros/duna-saga-1.jpg" alt="Imagem 1">
+            <h2 class="livros__container__card__title">Duna (Frank Herbert)</h2>
+            <p>A saga original escrita por Frank Herbert é composta por seis livros no total, lançados entre.</p>
+            <p><strong>(1999 - 2001)</strong></p>
+            <button>Leia Mais</button>
+        </div>
+        <div class="livros__container__card">
+            <img src="/dist/images/livros/Prelude-to-Dune.webp" alt="Imagem 2">
+            <h2 class="livros__container__card__title">Prequel - Prelúdio de 'Duna'</h2>
+            <p>Aqui, nos deparamos com a fronteira entre o universo “oficial”, escrito por Frank Herbert, e o “expandido”, produzido pelo seu filho Brian, em parceria com Kevin Anderson.</p>
+            <p><strong>(1999 - 2001)</strong></p>
+            <button>Leia Mais</button>
+        </div>
+        <div class="livros__container__card">
+            <img src="/dist/images/livros/Legends-of-Dune.webp" alt="Imagem 3">
+            <h2 class="livros__container__card__title">Prequel - 'Lendas de Duna'</h2>
+            <p>Os livros levam o leitor a um distante passado, em que a humanidade havia lutado e resistido contra a ofensiva das máquinas. Acompanhe as primeiras Jihads.</p>
+            <p><strong>(2002 - 2004)</strong></p>
+            <button>Leia Mais</button>
+        </div>
+        <div class="livros__container__card">
+            <img src="/dist/images/livros/heroes of duna.jpg" alt="Imagem 4">
+            <h2 class="livros__container__card__title">Prequel - 'Heróis de Duna'</h2>
+            <p>Agora mais próxima da história contada pela saga original, a trilogia de Heróis de Duna se propõe a revelar narrativas antes omitidas por saltos temporais escolhidos por Frank Herbert. Assim, as linhas do tempo enfim se cruzam.</p>
+            <p><strong>(2008 - 2023)</strong></p>
+            <button>Leia Mais</button>
+        </div>
+        <div class="livros__container__card">
+            <img src="/dist/images/livros/great-schools-of-duna.webp" alt="Imagem 5">
+            <h2 class="livros__container__card__title">Prequel - 'Great Schools of Dune'</h2>
+            <p>Nesta trilogia, os autores voltam 1 mil anos do passado para nos revelar como a sociedade sobreviveu à guerra contra as máquinas e, a partir da vitória, desenvolveu tecnologias e artimanhas capazes de impulsionar a conquista e viagem intergalácticas.</p>
+            <p><strong>(2012 - 2016)</strong></p>
+            <button>Leia Mais</button>
+        </div>
+        <div class="livros__container__card">
+            <img src="/dist/images/livros/caladan.webp" alt="Imagem 6">
+            <h2 class="livros__container__card__title">Prequel - 'The Caladan Trilogy'</h2>
+            <p>A história agora se compromete a nos contar os pormenores que fizeram os governantes de Caladan – Leto Atreides e Lady Jessica – ganharem os olhos do imperador e a rivalidade de outras casas. O enredo acompanha o crescimento de Paul Atreides.</p>
+            <p><strong>(2020 - 2022)</strong></p>
+            <button>Leia Mais</button>
+        </div>
+    </div>
+  </section>
+
+  <section class="trailers" id="trailers">
+    <div class="trailers__container">
+      <h2>Trailers</h2>
+      <h4>Veja os trailers de duna 1 e duna 2</h4>
+      <div class="trailers__container__trailer1">
+        <h3>Duna 1</h3>
+        <iframe src="https://www.youtube.com/embed/n9xhJrPXop4" frameborder="0" ></iframe>
+        <button>
+          <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjeyaPv9-qGAxW9qpUCHX75BHkQFnoECBAQAQ&url=https%3A%2F%2Fwww.primevideo.com%2F-%2Fpt_PT%2Fdetail%2FDuna%2F0SYUY2G21A1OHV2K1ANHXTSYCT&usg=AOvVaw0DhqxAfOrC_1RfQ8hVZIdX&opi=89978449">
+            Assistir Filme
+          </a>
+      </div>
+      <div class="trailers__container__trailer2">
+        <h3>Duna 2</h3>
+        <iframe src="https://www.youtube.com/embed/QqmbrvluQRA" frameborder="0" ></iframe>
+        <button>
+          <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwju9cOB-eqGAxXWlJUCHbSQAZoQFnoECBIQAQ&url=https%3A%2F%2Fwww.primevideo.com%2F-%2Fpt%2Fdetail%2FDuna-Parte-Dois%2F0NW4P371MNSJ4Q6JS5KVBIDW8Q&usg=AOvVaw3l2AHOukC3jgr1-cKS3Z5o&opi=89978449">
+            Assistir Filme
+          </a>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__content">
+        <div class="footer__content__section">
+            <h4>Sobre Nós</h4>
+            <p>Somos uma empresa dedicada a oferecer os melhores serviços e produtos aos nossos clientes.</p>
+        </div>
+        <div class="footer__content__section">
+            <h4>Contato</h4>
+            <p>Email: contato@empresa.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        &copy; 2024 Empresa. Todos os direitos reservados.
+    </div>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/dist/script/main.js"></script>
+</body>
+</html>
+

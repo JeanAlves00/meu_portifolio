@@ -1,0 +1,28 @@
+$corDeFundo: #f1c40f;
+
+$corTextoTitleBig: #ecf0f1;
+$corTextoTitle: #bdc3c7;
+$corTextoPrincipal: #2c3e50;
+$corTextoSecundaria: #000000;
+
+//hero
+$background-image: '/dist/images/fundo/dune_fundo.jpg';
+$hero-padding: 50px;
+$hero-height: 100vh;
+
+//header / botao
+$white: #ffffff;
+$primary-color: #e1c699;
+$secondary-color: #e45f22;
+$button-hover-bg: darken($primary-color, 10%);
+$button-hover-bg-secondary: darken($secondary-color, 10%);
+$button-border-radius: 5px;
+$button-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+//sobre
+$strong-color: #e1c699;
+$background-card-sobre: #3b1f1f;
+
+//livros
+$font-color: #2c3e50;
+$background-card-livros: rgb(138, 62, 1);

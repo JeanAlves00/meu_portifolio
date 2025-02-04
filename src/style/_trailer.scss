@@ -1,0 +1,146 @@
+@use 'variaveis';
+
+.trailers {
+  &__container {
+    text-align: center;
+    padding: 20px;
+
+    h2 {
+      font-size: 2.5em;
+    }
+
+    h2, h4 {
+      margin-bottom: 20px;
+    }
+
+    &__trailer1, &__trailer2 {
+      display: inline-block;
+      width: 40%;
+      margin: 10px;
+      vertical-align: top;
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 2em;
+      }
+
+      iframe {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 15px 30px;
+        background-color: variaveis.$primary-color;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+      
+        &:hover {
+          background-color: variaveis.$button-hover-bg;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      
+        &:active {
+          background-color: variaveis.$button-hover-bg;
+          transform: translateY(0);
+          box-shadow: none;
+        }
+      
+        a {
+          color: variaveis.$white;
+          text-decoration: none;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__container {
+      &__trailer1, &__trailer2 {
+        width: 45%;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    &__container {
+      &__trailer1, &__trailer2 {
+        width: 100%;
+        display: block;
+      }
+
+      iframe {
+        height: 400px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__container {
+      padding: 10px;
+
+      h2 {
+        font-size: 2em;
+      }
+
+      h3 {
+        font-size: 1.5em;
+      }
+
+      &__trailer1, &__trailer2 {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+      }
+
+      iframe {
+        height: 300px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__container {
+      h2 {
+        font-size: 1.8em;
+      }
+
+      h3 {
+        font-size: 1.3em;
+      }
+
+      &__trailer1, &__trailer2 {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+      }
+
+      iframe {
+        height: 250px;
+      }
+
+      button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+  }
+}
