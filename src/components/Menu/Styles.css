@@ -1,0 +1,120 @@
+.menu-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu-trigger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.hamburger {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.menu-trigger:hover .hamburger,
+.menu-trigger:hover .hamburger::before,
+.menu-trigger:hover .hamburger::after {
+    background: #666;
+}
+
+.menu-trigger.active .hamburger {
+    background: transparent;
+}
+
+.menu-trigger.active .hamburger::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.menu-trigger.active .hamburger::after {
+    transform: rotate(0);
+    top: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 200px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+    transition: background 0.2s ease-in-out;
+}
+
+.dropdown-menu li:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 20px;
+    transition: color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    color: #666;
+}
+
+.menu-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-menu a:hover .menu-icon {
+    transform: scale(1.2);
+}
