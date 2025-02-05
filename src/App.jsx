@@ -3,7 +3,7 @@ import Menu from './components/Menu/Menu'
 import Hero from './components/Hero/Hero'
 import Skills from './components/Skills/Skills'
 import About from './components/About/About'
-
+import Certificates from './components/Carousel/Certificates'
 function App() {
 
   return (
@@ -12,6 +12,7 @@ function App() {
       <Hero />
       <Skills />
       <About />
+      <Certificates />
     </>
   )
 }
