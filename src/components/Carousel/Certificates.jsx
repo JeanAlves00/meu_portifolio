@@ -5,13 +5,19 @@ const certificates = [
   {
     id: 1,
     title: "React Development",
-    image: "../../images/certificate1.png",
+    image: "https://github.com/JeanAlves00/meu_portifolio/blob/main/src/images/certificate1.png?raw=true",
     issuer: "Organization 1"
   },
   {
     id: 2,
     title: "Web Development",
-    image: "../images/certificate2.png",
+    image: "https://github.com/JeanAlves00/meu_portifolio/blob/main/src/images/certificate2.png?raw=true",
+    issuer: "Organization 2"
+  },
+  {
+    id: 3,
+    title: "Web Development",
+    image: "https://github.com/JeanAlves00/meu_portifolio/blob/main/src/images/certificate3.png?raw=true",
     issuer: "Organization 2"
   },
 ];
@@ -45,6 +51,15 @@ const Certificates = () => {
         ))}
       </div>
       <button className="carousel-button next" onClick={nextSlide}>❯</button>
+      <div className="carousel-dots">
+        {certificates.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

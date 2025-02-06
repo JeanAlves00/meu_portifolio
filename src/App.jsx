@@ -10,9 +10,10 @@ function App() {
     <>
       <Menu />
       <Hero />
-      <Skills />
       <About />
+      <Skills />
       <Certificates />
+      <Skills />
     </>
   )
 }
