@@ -33,11 +33,15 @@ const About = () => {
           </button>
           <button className="cv-button download" onClick={handleDownloadCV}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path fillRule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" />
+              <path d="M12 4.75a.75.75 0 00-1.5 0v8.614L6.295 9.157a.75.75 0 10-1.09 1.032l5.5 5.5a.75.75 0 001.09 0l5.5-5.5a.75.75 0 00-1.09-1.032L12 13.364V4.75z" />
+              <path d="M3.5 17.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 23h14.5A2.75 2.75 0 0022 20.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z" />
             </svg>
-            Baixar Currículo
+            Download CV
           </button>
         </div>
+      </div>
+      <div className="about-image">
+        <img src="https://avatars.githubusercontent.com/u/154983968?v=4" alt="Profile" />
       </div>
     </section>
   );

@@ -1,12 +1,25 @@
 import './Styles.css';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Olá, Me chamo <span className="highlight">Jean Pablo Alves Gonçalves</span></h1>
+          <h1>Olá, Me chamo{' '}
+            <TypeAnimation
+              sequence={[
+                'Jean Pablo Alves Gonçalves',
+                2000,
+                '',
+                500,
+              ]}
+              speed={50}
+              repeat={Infinity}
+              className="highlight"
+            />
+          </h1>
           <h2>Full Stack Developer</h2>
           <p>Vamos criar uma experiência digital para fazer a diferença</p>
           <div className="cta-buttons">
@@ -20,9 +33,6 @@ const Hero = () => {
               <FaWhatsapp className="icon" /> WhatsApp
             </a>
           </div>
-        </div>
-        <div className="hero-image">
-          <img src="https://avatars.githubusercontent.com/u/154983968?s=400&u=dadf2cb45e2f42f0a946d7a2888fd457b6d8656a&v=4" alt="Profile" />
         </div>
       </div>
     </section>

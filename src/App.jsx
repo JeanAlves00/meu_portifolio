@@ -1,5 +1,7 @@
 import './App.css'
-import Menu from './components/Menu/Menu'
+import Loading from './components/Loading/Loading'
+import Header from './components/Menu/Header'
+import UpButton from './components/UpButton/UpButton'
 import Hero from './components/Hero/Hero'
 import Skills from './components/Skills/Skills'
 import About from './components/About/About'
@@ -8,7 +10,9 @@ function App() {
 
   return (
     <>
-      <Menu />
+      <Loading />
+      <Header />
+      <UpButton />
       <Hero />
       <About />
       <Skills />

@@ -1,74 +1,104 @@
+/* ======= SKILLS SECTION ======= */
 .skills-container {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
-    background: #ffffff;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+/* ======= CAROUSEL ======= */
+.skills-carousel {
+  display: flex;
+  will-change: transform;
+  animation: scroll 20s linear infinite;
+  gap: 4rem;
+  padding: 1rem;
+  min-width: 100%;
+}
+
+/* ======= SKILL ITEM ======= */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* ======= SKILL ICON ======= */
+.skill-icon {
+  font-size: 3.5rem;
+  color: #666;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito hover nos ícones */
+.skill-item:hover .skill-icon {
+  color: var(--skill-color, #007bff);
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* ======= SKILL NAME (LABEL) ======= */
+.skill-name {
+  position: absolute;
+  top: -35px;
+  background: var(--skill-color, #007bff);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Mostrar nome ao passar o mouse */
+.skill-item:hover .skill-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======= ANIMAÇÃO DO CARROSSEL ======= */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .skills-carousel {
-    display: flex;
-    will-change: auto;
-    animation: scroll 20s linear infinite;    gap: 4rem;
-    padding: 1rem;
+  100% {
+    transform: translateX(-50%);
   }
-  
-  .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-  }
-  
+}
+
+/* Pausar animação ao passar o mouse */
+.skills-carousel:hover {
+  animation-play-state: paused;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
   .skill-icon {
-    font-size: 3.5rem;
-    color: #666;
-    transition: all 0.3s ease;
+    font-size: 2.5rem;
   }
-  
-  .skill-item:hover .skill-icon {
-    color: var(--skill-color);
-    transform: translateY(-5px) scale(1.1);
+
+  .skills-carousel {
+    gap: 2.5rem;
   }
-  
-  .skill-name {
-    position: absolute;
-    top: -30px;
-    background: var(--skill-color);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 10px 0;
   }
-  
-  .skill-item:hover .skill-name {
-    opacity: 1;
-    transform: translateY(0);
+
+  .skill-icon {
+    font-size: 2rem;
   }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-50% - 2rem));
-    }
+
+  .skills-carousel {
+    gap: 2rem;
+    padding: 0.5rem;
   }
-  
-  .skills-carousel:hover {
-    animation-play-state: paused;
-  }
-  
-  @media (max-width: 768px) {
-    .skill-icon {
-      font-size: 2.5rem;
-    }
-    
-    .skills-carousel {
-      gap: 2.5rem;
-    }
-  }
+}
