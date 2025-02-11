@@ -1,13 +1,14 @@
-import './Styles.css';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
+import { HeroSection, HeroContent, HeroText, CTAButtons } from '../styles/Hero';
 
 const Hero = () => {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1>Olá, Me chamo{' '}
+    <HeroSection>
+      <HeroContent>
+        <HeroText>
+          <h1>
+            Olá, Me chamo{' '}
             <TypeAnimation
               sequence={[
                 'Jean Pablo Alves Gonçalves',
@@ -22,7 +23,7 @@ const Hero = () => {
           </h1>
           <h2>Full Stack Developer</h2>
           <p>Vamos criar uma experiência digital para fazer a diferença</p>
-          <div className="cta-buttons">
+          <CTAButtons>
             <a href="https://github.com/JeanAlves00" className="primary-btn">
               <FaGithub className="icon" /> Github
             </a>
@@ -32,10 +33,10 @@ const Hero = () => {
             <a href="tel:+5569992640368" className="primary-btn whatsapp-btn">
               <FaWhatsapp className="icon" /> WhatsApp
             </a>
-          </div>
-        </div>
-      </div>
-    </section>
+          </CTAButtons>
+        </HeroText>
+      </HeroContent>
+    </HeroSection>
   );
 };
 

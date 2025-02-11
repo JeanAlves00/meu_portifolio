@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
-import "./Styles.css";
+import {
+  HeaderContainer,
+  Logo,
+  DesktopMenu,
+  MenuLink,
+  MenuToggle,
+  MenuToggleSpan,
+  MobileMenu,
+  MobileMenuLink
+} from "../styles/Header";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,35 +32,35 @@ const Header = () => {
   const menuItems = ["Início", "Sobre", "Projetos", "Contato"];
 
   return (
-    <header>
-      <h1 className="logo">&lt;JEAN /&gt;</h1>
+    <HeaderContainer>
+      <Logo>&lt;JEAN /&gt;</Logo>
       
-      <nav className="desktop-menu">
+      <DesktopMenu>
         {menuItems.map((item) => (
-          <a key={item} href={`#${item.toLowerCase()}`}>
+          <MenuLink key={item} href={`#${item.toLowerCase()}`}>
             {item}
-          </a>
+          </MenuLink>
         ))}
-      </nav>
+      </DesktopMenu>
 
-      <button className="menu-toggle" onClick={toggleMenu}>
-        <span className={menuOpen ? 'close' : 'open'}></span>
-      </button>
+      <MenuToggle onClick={toggleMenu}>
+        <MenuToggleSpan $isOpen={menuOpen} />
+      </MenuToggle>
 
       {menuOpen && (
-        <div className="mobile-menu">
+        <MobileMenu>
           {menuItems.map((item) => (
-            <a
+            <MobileMenuLink
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
             >
               {item}
-            </a>
+            </MobileMenuLink>
           ))}
-        </div>
+        </MobileMenu>
       )}
-    </header>
+    </HeaderContainer>
   );
 };
 
