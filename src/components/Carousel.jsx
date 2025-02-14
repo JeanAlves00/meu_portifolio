@@ -1,78 +1,95 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import {
-  CarouselContainer,
-  CarouselWrapper,
-  CarouselSlide,
-  PrevButton,
-  NextButton,
-  DotsContainer,
-  Dot,
+    Container,
+    Carousel,
+    Item,
+    Caption,
+    PrevButton,
+    NextButton,
+    ModalOverlay,
+    ModalImage,
+    ModalContainer,
+    CloseButton
 } from '../styles/Carousel';
-import certificate1 from '../images/certificate1.png';
-import certificate2 from '../images/certificate2.png';
-import certificate3 from '../images/certificate3.png';
 
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+// Random image URLs
+const imageUrls = [
+    'https://picsum.photos/id/1018/300/400',
+    'https://picsum.photos/id/1015/300/400',
+    'https://picsum.photos/id/1019/300/400',
+    'https://picsum.photos/id/1020/300/400',
+    'https://picsum.photos/id/1021/300/400'
+];
 
-  // Sample certificates with placeholder images
-  const certificates = [
-    {
-      image: certificate1,
-      title: 'Certificate 1'
-    },
-    {
-      image: certificate2,
-      title: 'Certificate 2'
-    },
-    {
-      image: certificate3,
-      title: 'Certificate 3'
-    }
-  ];
+export default function CarouselComponent() {
+    const [position, setPosition] = useState(1);
+    const totalItems = imageUrls.length;
+    const [modalImage, setModalImage] = useState(null);
+    const dragStartRef = useRef(null);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === certificates.length - 1 ? 0 : prevIndex + 1
+    const goPrevious = () => {
+        setPosition(position === 1 ? totalItems : position - 1);
+    };
+
+    const goNext = () => {
+        setPosition(position === totalItems ? 1 : position + 1);
+    };
+
+    const onMouseDown = (e) => {
+        dragStartRef.current = e.clientX;
+    };
+
+    const onMouseUp = (e) => {
+        if (dragStartRef.current !== null) {
+            const dx = e.clientX - dragStartRef.current;
+            const threshold = 50;
+            if (dx > threshold) {
+                goPrevious();
+            } else if (dx < -threshold) {
+                goNext();
+            }
+        }
+        dragStartRef.current = null;
+    };
+
+    const openModal = (url) => {
+        setModalImage(url);
+    };
+
+    const closeModal = () => {
+        setModalImage(null);
+    };
+
+    return (
+        <Container>
+            <Carousel
+                $position={position}
+                id="carousel"
+                onMouseDown={onMouseDown}
+                onMouseUp={onMouseUp}
+            >
+                {imageUrls.map((url, index) => (
+                    <Item key={index} onClick={() => openModal(url)}>
+                        <img src={url} alt={`Slide ${index + 1}`} />
+                        <Caption>Foto {index + 1}</Caption>
+                    </Item>
+                ))}
+                <PrevButton onClick={goPrevious}>
+                    <FaArrowLeft />
+                </PrevButton>
+                <NextButton onClick={goNext}>
+                    <FaArrowRight />
+                </NextButton>
+            </Carousel>
+            {modalImage && (
+                <ModalOverlay>
+                    <ModalContainer>
+                        <CloseButton onClick={closeModal}>&times;</CloseButton>
+                        <ModalImage src={modalImage} alt="Imagem Ampliada" />
+                    </ModalContainer>
+                </ModalOverlay>
+            )}
+        </Container>
     );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? certificates.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
-
-  return (
-    <CarouselContainer>
-      <CarouselWrapper style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {certificates.map((certificate, index) => (
-          <CarouselSlide key={index}>
-            <img src={certificate.image} alt={certificate.title} />
-          </CarouselSlide>
-        ))}
-      </CarouselWrapper>
-      <PrevButton onClick={prevSlide} aria-label="Previous slide">
-        <span>‹</span>
-      </PrevButton>
-      <NextButton onClick={nextSlide} aria-label="Next slide">
-        <span>›</span>
-      </NextButton>
-      <DotsContainer>
-        {certificates.map((_, index) => (
-          <Dot
-            key={index}
-            active={currentIndex === index}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
-      </DotsContainer>
-    </CarouselContainer>
-  );
-};
-
-export default Carousel;
+}

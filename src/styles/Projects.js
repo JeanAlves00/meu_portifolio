@@ -9,32 +9,33 @@ export const ProjectsContainer = styled.section`
   max-width: 1400px;
   margin: 20px auto;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #0a1931, #162b4d);
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
 
   h2 {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 2.8rem;
-    color: #333;
+    font-size: 2.5rem;
+    color: #d72638;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   @media (max-width: 1440px) {
     padding: 35px 15px;
-    h2 { font-size: 2.6rem; }
+    h2 { font-size: 2.3rem; }
   }
 
   @media (max-width: 1024px) {
     padding: 30px 15px;
-    h2 { font-size: 2.4rem; }
+    h2 { font-size: 2.1rem; }
   }
 
   @media (max-width: 768px) {
     padding: 25px 10px;
     h2 { 
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 30px;
     }
   }
@@ -42,8 +43,26 @@ export const ProjectsContainer = styled.section`
   @media (max-width: 480px) {
     padding: 20px 8px;
     h2 { 
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       margin-bottom: 25px;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    padding: 50px 30px;
+    border-radius: 40px;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 50px;
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    padding: 60px 40px;
+    border-radius: 50px;
+    h2 {
+      font-size: 3.5rem;
+      margin-bottom: 60px;
     }
   }
 `;
@@ -71,6 +90,16 @@ export const ProjectsGrid = styled.div`
     gap: 15px;
     padding: 8px;
   }
+  
+  @media screen and (min-width: 1920px) {
+    gap: 35px;
+    padding: 30px;
+  }
+  
+  @media screen and (min-width: 2560px) {
+    gap: 40px;
+    padding: 35px;
+  }
 `;
 
 export const ProjectCard = styled.div`
@@ -97,6 +126,14 @@ export const ProjectCard = styled.div`
     &:hover {
       transform: translateY(-3px);
     }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    border-radius: 20px;
+  }
+  
+  @media screen and (min-width: 2560px) {
+    border-radius: 25px;
   }
 `;
 
@@ -156,7 +193,7 @@ export const CardText = styled.p`
 `;
 
 export const ProjectButton = styled.button`
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: #d72638;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -165,15 +202,14 @@ export const ProjectButton = styled.button`
   font-weight: 600;
   font-size: 0.9rem;
   text-transform: uppercase;
-  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.3);
   transition: all 0.3s ease;
   display: block;
   margin: 0 auto 15px;
 
   &:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    background: #b71c29;
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(106, 17, 203, 0.4);
+    box-shadow: 0 4px 12px rgba(215, 38, 56, 0.3);
   }
 
   @media (max-width: 768px) {
@@ -186,6 +222,16 @@ export const ProjectButton = styled.button`
     padding: 8px 16px;
     font-size: 0.8rem;
     margin-bottom: 10px;
+  }
+  
+  @media screen and (min-width: 1920px) {
+    padding: 16px 28px;
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 2560px) {
+    padding: 18px 32px;
+    font-size: 1.1rem;
   }
 `;
 

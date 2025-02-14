@@ -21,10 +21,10 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, shopping cart, payment integration, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      title: "Project 1",
+      description: "Detailed description of project 1. This is where you can explain the technologies used, challenges faced, and solutions implemented.",
+      image: "/path-to-image1.jpg",
+      video: "https://www.youtube.com/embed/your-video-id",
       liveUrl: "https://project1.com",
       githubUrl: "https://github.com/username/project1"
     },
