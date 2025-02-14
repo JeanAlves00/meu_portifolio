@@ -6,31 +6,34 @@ export const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, #0a1931 0%, #162b4d 100%);
+  margin: 1rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 480px) {
-    padding: 1rem;
-    min-height: calc(100vh - 60px);
-  }
-
-  @media (min-width: 481px) and (max-width: 768px) {
+  @media (max-width: 768px) {
+    margin: 0.5rem;
+    border-radius: 20px;
     padding: 1.5rem;
   }
 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    padding: 2rem;
+  @media (max-width: 480px) {
+    margin: 0.3rem;
+    padding: 1rem;
+    border-radius: 15px;
+    min-height: calc(100vh - 60px);
   }
 
-  @media (min-width: 1025px) and (max-width: 1200px) {
+  @media screen and (min-width: 1920px) {
+    margin: 1.5rem;
     padding: 3rem;
+    border-radius: 40px;
   }
 
-  @media (min-width: 1201px) and (max-width: 1920px) {
+  @media screen and (min-width: 2560px) {
+    margin: 2rem;
     padding: 4rem;
-  }
-
-  @media (min-width: 2560px) {
-    padding: 6rem;
+    border-radius: 50px;
   }
 `;
 
@@ -38,19 +41,25 @@ export const HeroContent = styled.div`
   max-width: 1400px;
   width: 100%;
   text-align: left;
-  padding: 0 1rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 
-  @media (max-width: 480px) {
-    padding: 0 0.5rem;
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    border-radius: 15px;
   }
 
-  @media (min-width: 481px) and (max-width: 768px) {
-    padding: 0 1rem;
+  @media (max-width: 480px) {
+    padding: 1rem;
+    border-radius: 10px;
   }
 
   @media (min-width: 2560px) {
     max-width: 2000px;
-    padding: 0 2rem;
+    padding: 3rem;
+    border-radius: 30px;
   }
 `;
 
@@ -58,32 +67,23 @@ export const HeroText = styled.div`
   color: #ffffff;
 
   h1 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
-    text-align: left;
     
     .highlight {
-      color: #00ff7f;
+      color: #d72638;
       display: block;
       margin-top: 0.5rem;
-      text-shadow: 0 0 10px rgba(0, 255, 127, 0.3);
+      text-shadow: 0 0 10px rgba(215, 38, 56, 0.3);
     }
 
-    @media (max-width: 480px) {
-      font-size: 1.8rem;
-    }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      font-size: 2.2rem;
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
+    @media (max-width: 768px) {
       font-size: 2.5rem;
     }
 
-    @media (min-width: 1025px) {
-      font-size: 3rem;
+    @media (max-width: 480px) {
+      font-size: 2rem;
     }
 
     @media (min-width: 2560px) {
@@ -92,27 +92,17 @@ export const HeroText = styled.div`
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #00ff7f;
+    color: #d72638;
     font-weight: 600;
-    text-align: right;
 
-    @media (max-width: 480px) {
-      font-size: 1.5rem;
-      text-align: left;
-    }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      font-size: 1.8rem;
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
+    @media (max-width: 768px) {
       font-size: 2rem;
     }
 
-    @media (min-width: 1025px) {
-      font-size: 2.5rem;
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
     }
 
     @media (min-width: 2560px) {
@@ -121,27 +111,22 @@ export const HeroText = styled.div`
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #e0e0e0;
+    color: #ffffff;
     line-height: 1.6;
-    text-align: left;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
 
     @media (max-width: 480px) {
       font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      font-size: 1.2rem;
-    }
-
-    @media (min-width: 769px) {
-      font-size: 1.4rem;
     }
 
     @media (min-width: 2560px) {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
 `;
@@ -149,9 +134,7 @@ export const HeroText = styled.div`
 export const CTAButtons = styled.div`
   display: flex;
   gap: 1rem;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -159,95 +142,50 @@ export const CTAButtons = styled.div`
   }
 
   a {
-    min-width: 160px;
+    background: #d72638;
+    color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    text-align: center;
+    min-width: 160px;
 
-    @media (max-width: 480px) {
-      width: 100%;
-      min-width: unset;
-      padding: 0.8rem 1rem;
-    }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      min-width: 180px;
-      padding: 0.9rem 1.8rem;
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-      min-width: 190px;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-    }
-
-    @media (min-width: 1025px) {
-      min-width: 200px;
-    }
-
-    @media (min-width: 2560px) {
-      min-width: 300px;
-      padding: 1.5rem 3rem;
-      font-size: 1.6rem;
-      border-radius: 12px;
-    }
-
-    .icon {
-      font-size: 1.1rem;
-
-      @media (max-width: 480px) {
-        font-size: 1rem;
-      }
-
-      @media (min-width: 2560px) {
-        font-size: 2rem;
-      }
-    }
-
-    // Button styles remain the same but are moved here
-    &.primary-btn {
-      background: linear-gradient(135deg, #00ff7f 0%, #00cc66 100%);
-      color: #1a1a1a;
-
-      &:hover {
-        background: linear-gradient(135deg, #00cc66 0%, #00b359 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 204, 102, 0.2);
-      }
+    &:hover {
+      background: #b71c29;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(215, 38, 56, 0.3);
     }
 
     &.secondary-btn {
       background: transparent;
-      border: 2px solid #00ff7f;
-      color: #00ff7f;
+      border: 2px solid #d72638;
+      color: #d72638;
 
       &:hover {
-        background: #00ff7f;
-        color: #1a1a1a;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 255, 127, 0.2);
+        background: #d72638;
+        color: white;
       }
     }
 
     &.whatsapp-btn {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      color: #ffffff;
+      background: #25D366;
 
       &:hover {
-        background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(37, 211, 102, 0.2);
+        background: #128C7E;
       }
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+      padding: 0.7rem 1rem;
+    }
+
+    @media (min-width: 2560px) {
+      padding: 1.2rem 2.5rem;
+      font-size: 1.4rem;
+      border-radius: 12px;
     }
   }
 `;

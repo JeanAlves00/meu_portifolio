@@ -3,7 +3,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Linguages from './components/Linguages';
-import Certificates from './components/Certificates';
+import Carousel from './components/Carousel';
+import Projects from './components/Projects';
 
 
 function App() {
@@ -15,7 +16,11 @@ function App() {
       <Linguages />
       <About />
       <Linguages />
-      <Certificates />
+      <Carousel />
+      <Linguages />
+      <Projects />
+      <Linguages />
+
     </>
   );
 }
