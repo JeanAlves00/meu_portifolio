@@ -3,6 +3,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import {
     Container,
     Carousel,
+    CarouselTitle,
     Item,
     Caption,
     PrevButton,
@@ -63,6 +64,7 @@ export default function CarouselComponent() {
 
     return (
         <Container>
+            <CarouselTitle>Certificados</CarouselTitle>
             <Carousel
                 $position={position}
                 id="carousel"

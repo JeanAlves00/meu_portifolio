@@ -11,13 +11,27 @@ export const Container = styled.div`
   margin: 1rem;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   width: calc(100% - 2rem);
   top: 0;
   left: 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+`;
+
+export const CarouselTitle = styled.h2`
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Carousel = styled.main`
