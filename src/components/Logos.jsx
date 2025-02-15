@@ -1,7 +1,7 @@
-import { CarouselContainer, Carousel, LanguageItem, Tooltip } from '../styles/Linguages';
+import { CarouselContainer, Carousel, LogoItem, Tooltip } from '../styles/Logos';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaJava } from 'react-icons/fa';
 
-const languages = [
+const logos = [
   { icon: <FaReact />, name: 'React', color: '#61DBFB' },
   { icon: <FaJs />, name: 'JavaScript', color: '#F0DB4F' },
   { icon: <FaHtml5 />, name: 'HTML5', color: '#E34C26' },
@@ -11,22 +11,22 @@ const languages = [
   { icon: <FaJava />, name: 'Java', color: '#007396' },
 ];
 
-const Linguages = () => {
-  // Duplicate the items for a smooth infinite scroll effect
-  const carouselItems = [...languages, ...languages, ...languages, ...languages, ...languages];
+// Duplicamos os logos para permitir o scroll infinito
+const carouselItems = [...logos, ...logos,...logos, ...logos,...logos, ...logos,...logos, ...logos,...logos, ...logos];
 
+const Logos = () => {
   return (
     <CarouselContainer>
       <Carousel>
-        {carouselItems.map((language, index) => (
-          <LanguageItem key={index} color={language.color}>
-            {language.icon}
-            <Tooltip>{language.name}</Tooltip>
-          </LanguageItem>
+        {carouselItems.map((logo, index) => (
+          <LogoItem key={index} color={logo.color}>
+            {logo.icon}
+            <Tooltip>{logo.name}</Tooltip>
+          </LogoItem>
         ))}
       </Carousel>
     </CarouselContainer>
   );
 };
 
-export default Linguages;
+export default Logos;

@@ -1,151 +1,131 @@
 import { useState } from 'react';
-import {
-  ProjectsContainer,
-  ProjectsGrid,
-  ProjectCard,
-  ProjectImage,
-  ProjectTitle,
-  ProjectDescription,
-  ExpandedCard,
-  VideoContainer,
-  InfoContainer,
-  ButtonsContainer,
-  ProjectButton,
-  CloseButton,
-  Overlay
+import { FaTimes } from 'react-icons/fa';
+import { 
+  ProjectsSection, 
+  ProjectsGrid, 
+  Card, 
+  ModalOverlay, 
+  ModalContent, 
+  ModalCloseIcon, 
+  ModalButtonsWrapper 
 } from '../styles/Projects';
 
+const projectsData = [
+  { 
+    id: 1, 
+    title: 'Project 1', 
+    description: 'Pequena descrição do projeto 1.', 
+    detailedDescription: 'Descrição detalhada do projeto 1.',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
+    projectUrl: 'https://project1.com',
+    githubUrl: 'https://github.com/username/project1'
+  },
+  { 
+    id: 2, 
+    title: 'Project 2', 
+    description: 'Pequena descrição do projeto 2.', 
+    detailedDescription: 'Descrição detalhada do projeto 2.',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
+    projectUrl: 'https://project2.com',
+    githubUrl: 'https://github.com/username/project2'
+  },
+  { 
+    id: 3, 
+    title: 'Project 3', 
+    description: 'Pequena descrição do projeto 3.', 
+    detailedDescription: 'Descrição detalhada do projeto 3.',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
+    projectUrl: 'https://project3.com',
+    githubUrl: 'https://github.com/username/project3'
+  },
+  {
+    id: 4,
+    title: 'Project 4',
+    description: 'Pequena descrição do projeto 4.',
+    detailedDescription: 'Descrição detalhada do projeto 4.',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    projectUrl: 'https://project4.com',
+    githubUrl: 'https://github.com/username/project3'
+  },
+  {
+    id: 5,
+    title: 'Project 5',
+    description: 'Pequena descrição do projeto 5.',
+    detailedDescription: 'Descrição detalhada do projeto 5.',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    projectUrl: 'https://project5.com',
+    githubUrl: 'https://github.com/username/project3'
+  },
+  {
+    id: 6,
+    title: 'Project 6',
+    description: 'Pequena descrição do projeto 6.',
+    detailedDescription: 'Descrição detalhada do projeto 6.',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    projectUrl: 'https://project6.com',
+    githubUrl: 'https://github.com/username/project3'
+  },
+];
+
 const Projects = () => {
-  const [expandedProject, setExpandedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Project 1",
-      description: "Detailed description of project 1. This is where you can explain the technologies used, challenges faced, and solutions implemented.",
-      image: "/path-to-image1.jpg",
-      video: "https://www.youtube.com/embed/your-video-id",
-      liveUrl: "https://project1.com",
-      githubUrl: "https://github.com/username/project1"
-    },
-    {
-      id: 2,
-      title: "Weather Dashboard",
-      description: "Real-time weather application using OpenWeather API. Built with React and styled-components.",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project2.com",
-      githubUrl: "https://github.com/username/project2"
-    },
-    {
-      id: 3,
-      title: "Task Management App",
-      description: "A Kanban-style task management application with drag-and-drop functionality.",
-      image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project3.com",
-      githubUrl: "https://github.com/username/project3"
-    },
-    {
-      id: 4,
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media metrics with real-time updates.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project4.com",
-      githubUrl: "https://github.com/username/project4"
-    },
-    {
-      id: 5,
-      title: "Fitness Tracker",
-      description: "Mobile-responsive fitness tracking application with workout planning and progress monitoring.",
-      image: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project5.com",
-      githubUrl: "https://github.com/username/project5"
-    },
-    {
-      id: 6,
-      title: "Recipe Finder",
-      description: "Recipe search and management app with filtering and favoriting capabilities.",
-      image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project6.com",
-      githubUrl: "https://github.com/username/project6"
-    },
-    {
-      id: 7,
-      title: "Chat Application",
-      description: "Real-time chat application with WebSocket integration and file sharing.",
-      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project7.com",
-      githubUrl: "https://github.com/username/project7"
-    },
-    {
-      id: 8,
-      title: "Budget Tracker",
-      description: "Personal finance management tool with expense tracking and visualization.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      liveUrl: "https://project8.com",
-      githubUrl: "https://github.com/username/project8"
-    }
-  ];
-
-  const handleExpand = (project) => {
-    setExpandedProject(project);
+  const openModal = (project) => {
+    setSelectedProject(project);
   };
 
-  const handleClose = () => {
-    setExpandedProject(null);
+  const closeModal = () => {
+    setSelectedProject(null);
   };
 
   return (
-    <ProjectsContainer>
-      <h2>My Projects</h2>
+    <ProjectsSection>
+      <h2>Meus Projetos</h2>
       <ProjectsGrid>
-        {projects.map((project) => (
-          <ProjectCard key={project.id}>
-            <ProjectImage src={project.image} alt={project.title} />
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectButton onClick={() => handleExpand(project)}>
-              Learn More
-            </ProjectButton>
-          </ProjectCard>
+        {projectsData.map(project => (
+          <Card key={project.id}>
+            <img
+              src={`https://picsum.photos/400/300?random=${project.id}`}
+              alt={project.title}
+            />
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <button onClick={() => openModal(project)}>Mais</button>
+          </Card>
         ))}
       </ProjectsGrid>
 
-      {expandedProject && (
-        <Overlay onClick={handleClose}>
-          <ExpandedCard onClick={(e) => e.stopPropagation()}>
-            <CloseButton onClick={handleClose}>&times;</CloseButton>
-            <VideoContainer>
-              <iframe
-                src={expandedProject.video}
-                title={expandedProject.title}
+      {selectedProject && (
+        <ModalOverlay>
+          <ModalContent>
+            <ModalCloseIcon onClick={closeModal}>
+              <FaTimes />
+            </ModalCloseIcon>
+            <div className="modal-video">
+              <iframe 
+                width="100%" 
+                height="315" 
+                src={selectedProject.videoUrl}
+                title={selectedProject.title}
                 frameBorder="0"
-                allowFullScreen
-              />
-            </VideoContainer>
-            <InfoContainer>
-              <h3>{expandedProject.title}</h3>
-              <ProjectDescription>
-                {expandedProject.description}
-              </ProjectDescription>
-              <ButtonsContainer>
-                <ProjectButton as="a" href={expandedProject.liveUrl} target="_blank">
-                  Visit Site
-                </ProjectButton>
-                <ProjectButton as="a" href={expandedProject.githubUrl} target="_blank">
-                  View Code
-                </ProjectButton>
-              </ButtonsContainer>
-            </InfoContainer>
-          </ExpandedCard>
-        </Overlay>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen>
+              </iframe>
+            </div>
+            <h3>{selectedProject.title}</h3>
+            <p>{selectedProject.detailedDescription}</p>
+            <ModalButtonsWrapper>
+              <a href={selectedProject.projectUrl} target="_blank" rel="noopener noreferrer">
+                Ver Projeto
+              </a>
+              <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </ModalButtonsWrapper>
+          </ModalContent>
+        </ModalOverlay>
       )}
-    </ProjectsContainer>
+    </ProjectsSection>
   );
 };
 
