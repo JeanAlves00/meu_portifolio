@@ -1,12 +1,12 @@
 import { 
-    ContactSection, 
-    ContactContainer, 
-    Title, 
-    Form, 
-    Input, 
-    Textarea, 
-    Button 
-} from '../styles/contact';
+  ContactSection, 
+  ContactContainer, 
+  Title, 
+  Form, 
+  Input, 
+  Textarea, 
+  Button 
+} from '../styles/Contact';
 
 const Contact = () => {
   return (
