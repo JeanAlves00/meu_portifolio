@@ -94,7 +94,6 @@ export const Item = styled.div`
   width: 300px;
   height: 400px;
   transition: transform 0.3s ease;
-  /* Increased spacing by using 350px */
   transform: rotateY(calc(-10deg * (var(--position) - var(--offset))))
     translateX(calc(-350px * (var(--position) - var(--offset))));
   z-index: calc(
@@ -127,14 +126,16 @@ export const Item = styled.div`
 `;
 
 export const Caption = styled.div`
-  height: 15%;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   text-align: center;
-  line-height: 1.2;
-  font-size: 1rem;
-  padding: 0.3rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const RadioContainer = styled.div`
@@ -177,8 +178,6 @@ export const NextButton = styled.button`
     color: rgba(0,0,0,0.9);
   }
 `;
-
-/* Updated Modal Components */
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -231,7 +230,7 @@ export const CloseButton = styled.button`
   z-index: 1001;
 
   &:hover {
-    background: rgba(255, 255, 255, 1);
+    background: rgb(248, 15, 15);
     transform: rotate(90deg);
     color: #000;
   }

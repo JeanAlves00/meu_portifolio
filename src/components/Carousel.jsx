@@ -11,22 +11,31 @@ import {
     ModalOverlay,
     ModalImage,
     ModalContainer,
-    CloseButton
+    CloseButton,
 } from '../styles/Carousel';
+import image1 from '../images/certificate1.png';
+import image2 from '../images/certificate2.png';
+import image3 from '../images/certificate3.png';
 
-// Random image URLs
+// Array de imagens
 const imageUrls = [
-    'https://picsum.photos/id/1018/300/400',
-    'https://picsum.photos/id/1015/300/400',
-    'https://picsum.photos/id/1019/300/400',
-    'https://picsum.photos/id/1020/300/400',
-    'https://picsum.photos/id/1021/300/400'
+    image1,
+    image2,
+    image3,
+];
+
+// Novo array com os captions
+const captions = [
+    "Certificado em React Básico",
+    "Certificado em Node.js Avançado",
+    "Certificado em UI/UX Design",
 ];
 
 export default function CarouselComponent() {
     const [position, setPosition] = useState(1);
     const totalItems = imageUrls.length;
     const [modalImage, setModalImage] = useState(null);
+    const [isDragging, setIsDragging] = useState(false);
     const dragStartRef = useRef(null);
 
     const goPrevious = () => {
@@ -38,7 +47,17 @@ export default function CarouselComponent() {
     };
 
     const onMouseDown = (e) => {
+        setIsDragging(false);
         dragStartRef.current = e.clientX;
+    };
+
+    const onMouseMove = (e) => {
+        if (dragStartRef.current !== null) {
+            const dx = e.clientX - dragStartRef.current;
+            if (Math.abs(dx) > 5) {
+                setIsDragging(true);
+            }
+        }
     };
 
     const onMouseUp = (e) => {
@@ -55,7 +74,9 @@ export default function CarouselComponent() {
     };
 
     const openModal = (url) => {
-        setModalImage(url);
+        if (!isDragging) {
+            setModalImage(url);
+        }
     };
 
     const closeModal = () => {
@@ -69,12 +90,13 @@ export default function CarouselComponent() {
                 $position={position}
                 id="carousel"
                 onMouseDown={onMouseDown}
+                onMouseMove={onMouseMove}
                 onMouseUp={onMouseUp}
             >
                 {imageUrls.map((url, index) => (
                     <Item key={index} onClick={() => openModal(url)}>
                         <img src={url} alt={`Slide ${index + 1}`} />
-                        <Caption>Foto {index + 1}</Caption>
+                        <Caption>{captions[index]}</Caption>
                     </Item>
                 ))}
                 <PrevButton onClick={goPrevious}>

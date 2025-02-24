@@ -157,15 +157,27 @@ export const ModalContent = styled.div`
 
 export const ModalCloseIcon = styled.div`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: #fff;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  color: #333;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  z-index: 1001;
 
   &:hover {
-    color: #b71c29;
+    background: rgb(248, 15, 15);
+    transform: rotate(90deg);
+    color: #000;
   }
 `;
 
@@ -187,5 +199,16 @@ export const ModalButtonsWrapper = styled.div`
       background: #b71c29;
       transform: translateY(-2px);
     }
+  }
+`;
+
+export const TechIcon = styled.span`
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
   }
 `;
