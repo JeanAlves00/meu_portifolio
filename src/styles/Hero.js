@@ -44,7 +44,7 @@ export const HeroContent = styled.div`
   padding: 2rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 768px) {
     padding: 1.5rem;
