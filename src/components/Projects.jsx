@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { FaTimes, FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaJava } from 'react-icons/fa';
+import { FaTimes, FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaJava, } from 'react-icons/fa';
+import { BsFiletypeScss } from "react-icons/bs";
 import { 
   ProjectsSection, 
   ProjectsGrid, 
@@ -20,6 +21,7 @@ const techIcons = {
   NodeJS: <FaNodeJs color="#68A063" />,
   Python: <FaPython color="#306998" />,
   Java: <FaJava color="#007396" />,
+  SCSS: <BsFiletypeScss color="#CD6799" />
 };
 
 const projectsData = [
@@ -37,11 +39,11 @@ const projectsData = [
     id: 2, 
     title: 'Clone Disney', 
     description: 'Um clone da pagina Inicial da Disney.', 
-    detailedDescription: 'Descrição detalhada do projeto 2.',
+    detailedDescription: 'Este é um projeto de site que emula uma interface de serviços de streaming, utilizando HTML, SCSS e JavaScript. O projeto abrange várias seções, como cabeçalho, área principal, programas, pacotes, perguntas frequentes, rodapé e dispositivos disponíveis. Ademais, automatiza tarefas com Gulp para compilar arquivos SCSS, otimizar imagens e minificar arquivos JavaScript.',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
-    projectUrl: 'https://project2.com',
+    projectUrl: 'https://projeto-4-iota.vercel.app',
     githubUrl: 'https://github.com/username/project2',
-    technologies: ['React', 'NodeJS', 'JavaScript']
+    technologies: ['HTML5', 'SCSS', 'JavaScript']
   },
   { 
     id: 3, 
