@@ -27,11 +27,11 @@ const techIcons = {
 const projectsData = [
   { 
     id: 1, 
-    title: 'Project 1', 
-    description: 'Pequena descrição do projeto 1.', 
-    detailedDescription: 'Descrição detalhada do projeto 1.',
+    title: 'Registro de hospedes', 
+    description: 'Registro de hospedes para uma pousada.', 
+    detailedDescription: 'Um registro de hospedes para uma pousada, onde é possível adicionar, editar e excluir hospedes. O projeto foi desenvolvido com React, utilizando o Local Storage para armazenar os dados dos hospedes. O projeto também é responsivo, se adaptando a diferentes tamanhos de tela.',
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', 
-    projectUrl: 'https://project1.com',
+    projectUrl: 'https://pousada-ud3s.vercel.app',
     githubUrl: 'https://github.com/username/project1',
     technologies: ['React', 'JavaScript', 'CSS3']
   },
