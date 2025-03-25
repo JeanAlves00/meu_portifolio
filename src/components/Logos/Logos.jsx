@@ -1,5 +1,5 @@
-import { CarouselContainer, Carousel, LogoItem, Tooltip } from '../styles/Logos';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaJava } from 'react-icons/fa';
+import * as S from './Styles';
 
 const logos = [
   { icon: <FaReact />, name: 'React', color: '#61DBFB' },
@@ -11,21 +11,20 @@ const logos = [
   { icon: <FaJava />, name: 'Java', color: '#007396' },
 ];
 
-// Duplicamos os logos para permitir o scroll infinito
-const carouselItems = [...logos, ...logos,...logos, ...logos,...logos, ...logos,...logos, ...logos,...logos, ...logos];
+const carouselItems = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
 const Logos = () => {
   return (
-    <CarouselContainer>
-      <Carousel>
+    <S.CarouselContainer>
+      <S.Carousel>
         {carouselItems.map((logo, index) => (
-          <LogoItem key={index} color={logo.color}>
+          <S.LogoItem key={index} color={logo.color}>
             {logo.icon}
-            <Tooltip>{logo.name}</Tooltip>
-          </LogoItem>
+            <S.Tooltip>{logo.name}</S.Tooltip>
+          </S.LogoItem>
         ))}
-      </Carousel>
-    </CarouselContainer>
+      </S.Carousel>
+    </S.CarouselContainer>
   );
 };
 

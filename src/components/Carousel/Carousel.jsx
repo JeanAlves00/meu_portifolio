@@ -1,21 +1,9 @@
 import { useState, useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import {
-    Container,
-    Carousel,
-    CarouselTitle,
-    Item,
-    Caption,
-    PrevButton,
-    NextButton,
-    ModalOverlay,
-    ModalImage,
-    ModalContainer,
-    CloseButton,
-} from '../styles/Carousel';
-import image1 from '../images/certificate1.png';
-import image2 from '../images/certificate2.png';
-import image3 from '../images/certificate3.png';
+import * as S from './Styles';
+import image1 from '../../images/certificate1.png';
+import image2 from '../../images/certificate2.png';
+import image3 from '../../images/certificate3.png';
 
 // Array de imagens
 const imageUrls = [
@@ -84,9 +72,9 @@ export default function CarouselComponent() {
     };
 
     return (
-        <Container>
-            <CarouselTitle>Certificados</CarouselTitle>
-            <Carousel
+        <S.Container>
+            <S.CarouselTitle>Certificados</S.CarouselTitle>
+            <S.Carousel
                 $position={position}
                 id="carousel"
                 onMouseDown={onMouseDown}
@@ -94,26 +82,26 @@ export default function CarouselComponent() {
                 onMouseUp={onMouseUp}
             >
                 {imageUrls.map((url, index) => (
-                    <Item key={index} onClick={() => openModal(url)}>
+                    <S.Item key={index} onClick={() => openModal(url)}>
                         <img src={url} alt={`Slide ${index + 1}`} />
-                        <Caption>{captions[index]}</Caption>
-                    </Item>
+                        <S.Caption>{captions[index]}</S.Caption>
+                    </S.Item>
                 ))}
-                <PrevButton onClick={goPrevious}>
+                <S.PrevButton onClick={goPrevious}>
                     <FaArrowLeft />
-                </PrevButton>
-                <NextButton onClick={goNext}>
+                </S.PrevButton>
+                <S.NextButton onClick={goNext}>
                     <FaArrowRight />
-                </NextButton>
-            </Carousel>
+                </S.NextButton>
+            </S.Carousel>
             {modalImage && (
-                <ModalOverlay>
-                    <ModalContainer>
-                        <CloseButton onClick={closeModal}>&times;</CloseButton>
-                        <ModalImage src={modalImage} alt="Imagem Ampliada" />
-                    </ModalContainer>
-                </ModalOverlay>
+                <S.ModalOverlay>
+                    <S.ModalContainer>
+                        <S.CloseButton onClick={closeModal}>&times;</S.CloseButton>
+                        <S.ModalImage src={modalImage} alt="Imagem Ampliada" />
+                    </S.ModalContainer>
+                </S.ModalOverlay>
             )}
-        </Container>
+        </S.Container>
     );
 }

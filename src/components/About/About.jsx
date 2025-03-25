@@ -1,13 +1,13 @@
-import { AboutContainer, AboutContent, ProfileImage, AboutText, ButtonContainer, Button } from '../styles/About';
+import * as S from './Styles';
 import { FaEye, FaDownload } from 'react-icons/fa';
-import foto from '../images/foto.png';
+import foto from '../../images/foto.png';
 
 const About = () => {
   return (
-    <AboutContainer>
-      <AboutContent>
-        <ProfileImage src={foto} alt="Profile" />
-        <AboutText>
+    <S.AboutContainer>
+      <S.AboutContent>
+        <S.ProfileImage src={foto} alt="Profile" />
+        <S.AboutText>
           <h1>Sobre Mim</h1>
           <p>
             Olá! Eu sou um desenvolvedor apaixonado por criar soluções inovadoras e eficientes.
@@ -15,17 +15,17 @@ const About = () => {
             aprender e evoluir. Meu objetivo é desenvolver aplicações que não apenas funcionem
             perfeitamente, mas também proporcionem uma experiência excepcional aos usuários.
           </p>
-          <ButtonContainer>
-            <Button href="/curriculo.pdf" target="_blank">
+          <S.ButtonContainer>
+            <S.Button href="/curriculo.pdf" target="_blank">
               <FaEye className="icon" /> Ver Currículo
-            </Button>
-            <Button href="/curriculo.pdf" download>
+            </S.Button>
+            <S.Button href="/curriculo.pdf" download>
               <FaDownload className="icon" /> Baixar Currículo
-            </Button>
-          </ButtonContainer>
-        </AboutText>
-      </AboutContent>
-    </AboutContainer>
+            </S.Button>
+          </S.ButtonContainer>
+        </S.AboutText>
+      </S.AboutContent>
+    </S.AboutContainer>
   );
 };
 

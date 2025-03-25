@@ -1,14 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  HeaderContainer,
-  Logo,
-  DesktopMenu,
-  MenuLink,
-  MenuToggle,
-  MenuToggleSpan,
-  MobileMenu,
-  MobileMenuLink
-} from "../styles/Header";
+import * as S from "./Styles";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,35 +23,35 @@ const Header = () => {
   const menuItems = ["Início", "Sobre", "Projetos", "Contato"];
 
   return (
-    <HeaderContainer>
-      <Logo>&lt;JEAN /&gt;</Logo>
+    <S.HeaderContainer>
+      <S.Logo>&lt;JEAN /&gt;</S.Logo>
       
-      <DesktopMenu>
+      <S.DesktopMenu>
         {menuItems.map((item) => (
-          <MenuLink key={item} href={`#${item.toLowerCase()}`}>
+          <S.MenuLink key={item} href={`#${item.toLowerCase()}`}>
             {item}
-          </MenuLink>
+          </S.MenuLink>
         ))}
-      </DesktopMenu>
+      </S.DesktopMenu>
 
-      <MenuToggle onClick={toggleMenu}>
-        <MenuToggleSpan $isOpen={menuOpen} />
-      </MenuToggle>
+      <S.MenuToggle onClick={toggleMenu}>
+        <S.MenuToggleSpan $isOpen={menuOpen} />
+      </S.MenuToggle>
 
       {menuOpen && (
-        <MobileMenu>
+        <S.MobileMenu>
           {menuItems.map((item) => (
-            <MobileMenuLink
+            <S.MobileMenuLink
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
             >
               {item}
-            </MobileMenuLink>
+            </S.MobileMenuLink>
           ))}
-        </MobileMenu>
+        </S.MobileMenu>
       )}
-    </HeaderContainer>
+    </S.HeaderContainer>
   );
 };
 
