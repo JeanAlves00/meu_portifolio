@@ -109,5 +109,4 @@ export const projectsData = [
     projectUrl: "https://example.com/projeto2",
     githubUrl: "https://github.com/usuario/projeto2",
   },
-  // Adicione mais projetos conforme necessário
 ];
