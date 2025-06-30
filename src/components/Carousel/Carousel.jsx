@@ -82,7 +82,7 @@ export default function CarouselComponent() {
                 onMouseUp={onMouseUp}
             >
                 {imageUrls.map((url, index) => (
-                    <S.Item key={index} onClick={() => openModal(url)}>
+                    <S.Item key={url} onClick={() => openModal(url)}>
                         <img src={url} alt={`Slide ${index + 1}`} />
                         <S.Caption>{captions[index]}</S.Caption>
                     </S.Item>
