@@ -1,25 +1,20 @@
 import * as S from './Styles';
 import { FaEye, FaDownload } from 'react-icons/fa';
-import foto from '../../images/foto.png';
+import aboutData from './aboutData';
 
 const About = () => {
   return (
     <S.AboutContainer>
       <S.AboutContent>
-        <S.ProfileImage src={foto} alt="Profile" />
+        <S.ProfileImage src={aboutData.foto} alt="Profile" />
         <S.AboutText>
-          <h1>Sobre Mim</h1>
-          <p>
-            Olá! Eu sou um desenvolvedor apaixonado por criar soluções inovadoras e eficientes.
-            Com experiência em diversas tecnologias do ecossistema web moderno, busco constantemente
-            aprender e evoluir. Meu objetivo é desenvolver aplicações que não apenas funcionem
-            perfeitamente, mas também proporcionem uma experiência excepcional aos usuários.
-          </p>
+          <h1>{aboutData.name}</h1>
+          <p>{aboutData.description}</p>
           <S.ButtonContainer>
-            <S.Button href="/curriculo.pdf" target="_blank">
+            <S.Button href={aboutData.curriculumUrl} target="_blank">
               <FaEye className="icon" /> Ver Currículo
             </S.Button>
-            <S.Button href="/curriculo.pdf" download>
+            <S.Button href={aboutData.curriculumUrl} download>
               <FaDownload className="icon" /> Baixar Currículo
             </S.Button>
           </S.ButtonContainer>

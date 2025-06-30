@@ -1,4 +1,5 @@
 import * as S from './Styles';
+import contactData from './contactData';
 
 const Contact = () => {
   const sendToWhatsApp = (e) => {
@@ -8,21 +9,21 @@ const Contact = () => {
     const message = e.target.message.value;
 
     const whatsappMessage = `Olá, meu nome é ${name}. Meu email é ${email}. Minha mensagem: ${message}`;
-    const whatsappNumber = '+5569992640368'; // Número do WhatsApp
-
-    // Abrir o WhatsApp com a mensagem
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+    window.open(
+      `https://wa.me/${contactData.whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+      '_blank'
+    );
   };
 
   return (
     <S.ContactSection>
       <S.ContactContainer>
-        <S.Title>Contato</S.Title>
+        <S.Title>{contactData.title}</S.Title>
         <S.Form onSubmit={sendToWhatsApp}>
-          <S.Input type="text" name="name" placeholder="Seu nome" required />
-          <S.Input type="email" name="email" placeholder="Seu email" required />
-          <S.Textarea name="message" placeholder="Sua mensagem" rows="5" required />
-          <S.Button type="submit">Enviar</S.Button>
+          <S.Input type="text" name="name" placeholder={contactData.placeholders.name} required />
+          <S.Input type="email" name="email" placeholder={contactData.placeholders.email} required />
+          <S.Textarea name="message" placeholder={contactData.placeholders.message} rows="5" required />
+          <S.Button type="submit">{contactData.buttonText}</S.Button>
         </S.Form>
       </S.ContactContainer>
     </S.ContactSection>
